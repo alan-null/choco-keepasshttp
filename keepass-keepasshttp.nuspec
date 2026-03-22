@@ -4,20 +4,20 @@
   <metadata>
     <id>keepass-keepasshttp</id>
     <title>KeePassHttp</title>
-    <version>1.8.4.220170629</version>
-    <packageSourceUrl>https://github.com/kendaleiv/chocolatey-keepass-keepasshttp</packageSourceUrl>    
+    <version>2.0.0.0</version>
+    <packageSourceUrl>https://github.com/alan-null/choco-keepasshttp</packageSourceUrl>
     <authors>pfn</authors>
     <owners>kendaleiv</owners>
     <summary>KeePass plugin to expose password entries securely (256bit AES/CBC) over HTTP</summary>
     <description>KeePassHttp is a plugin for KeePass 2.x and provides a secure means of exposing KeePass entries via HTTP for clients to consume. This plugin is primarily intended for use with PassIFox for Mozilla Firefox and chromeIPass for Google Chrome.</description>
-    <projectUrl>https://github.com/pfn/keepasshttp</projectUrl>
-    <iconUrl>https://raw.githubusercontent.com/pfn/keepasshttp/master/logo.png</iconUrl>
+    <projectUrl>https://github.com/alan-null/keepasshttp</projectUrl>
+    <iconUrl>https://raw.githubusercontent.com/alan-null/keepasshttp/master/logo.png</iconUrl>
     <tags>keepass keepasshttp admin</tags>
     <copyright>© pfn</copyright>
-    <licenseUrl>https://github.com/pfn/keepasshttp/blob/c2c4eb5388a02169400cba7a67be325caabdcc37/LICENSE</licenseUrl>
+    <licenseUrl>https://github.com/alan-null/keepasshttp/blob/v2.0.0.0/LICENSE</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <docsUrl>https://github.com/pfn/keepasshttp/blob/master/README.md</docsUrl>
-    <bugTrackerUrl>https://github.com/pfn/keepasshttp/issues</bugTrackerUrl>
+    <docsUrl>https://alan-null.github.io/keepasshttp/</docsUrl>
+    <bugTrackerUrl>https://github.com/alan-null/keepasshttp/issues</bugTrackerUrl>
     <dependencies>
       <dependency id="keepass" version="[2.0,3.0)" />
     </dependencies>

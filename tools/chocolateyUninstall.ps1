@@ -1,19 +1,31 @@
 ﻿$packageName = "keepass-keepasshttp"
-
-$is64bit = Get-ProcessorBits 64
 $programUninstallEntryName = "KeePass Password Safe 2."
 
-if ($is64bit) {
-  $installPath = (Get-ItemProperty HKLM:\SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\Uninstall\* | Select DisplayName, InstallLocation | Where-Object {$_.DisplayName -like "$programUninstallEntryName*"}).InstallLocation
+$registryPath = if ([Environment]::Is64BitOperatingSystem) {
+  "HKLM:\SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\Uninstall\*"
 }
 else {
-  $installPath = (Get-ItemProperty HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\* | Select DisplayName, InstallLocation | Where-Object {$_.DisplayName -like "$programUninstallEntryName*"}).InstallLocation
+  "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\*"
 }
+
+$installPath = (
+  Get-ItemProperty $registryPath |
+  Select-Object DisplayName, InstallLocation |
+  Where-Object { $_.DisplayName -like "$programUninstallEntryName*" } |
+  Select-Object -First 1
+).InstallLocation.TrimEnd('\')
 
 if (!$installPath) {
-  throw "Could not locate KeePass Password Safe 2.x installation location. The plugin may still exist on disk."
+  Write-Warning "Could not locate KeePass installation. Plugin files may need manual cleanup."
+  return
 }
 
-$fileFullPath = "$installPath\Plugins\KeePassHttp.plgx"
-
-Remove-Item $fileFullPath
+foreach ($path in @("$installPath\KeePassHttp.plgx", "$installPath\Plugins\KeePassHttp.plgx")) {
+  if (Test-Path $path) {
+    Remove-Item $path -Force
+    Write-Host "Removed: $path"
+  }
+  else {
+    Write-Verbose "Not found, skipping: $path"
+  }
+}
