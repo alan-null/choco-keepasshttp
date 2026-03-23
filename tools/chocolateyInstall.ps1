@@ -1,6 +1,6 @@
 ﻿$packageName = "keepass-keepasshttp"
-$url = "https://github.com/alan-null/keepasshttp/releases/download/v2.3.0.0/KeePassHttp.plgx"
-$checksum = "61374d4e570b5223c5b0bd69fabaab2ac74d51440919eb6c3c1cde3d5ce52904"
+$url = "https://github.com/alan-null/keepasshttp/releases/download/v2.3.1.0/KeePassHttp.plgx"
+$checksum = "9da7a130f31bfb61e08f4df2beec65a6af55a4e30c8d94514e7665bf1af36136"
 $checksumType = "sha256"
 
 $programUninstallEntryName = "KeePass Password Safe 2."

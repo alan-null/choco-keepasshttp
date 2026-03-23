@@ -4,7 +4,7 @@
   <metadata>
     <id>keepass-keepasshttp</id>
     <title>KeePassHttp</title>
-    <version>2.3.0.0</version>
+    <version>2.3.1.0</version>
     <packageSourceUrl>https://github.com/alan-null/choco-keepasshttp</packageSourceUrl>
     <authors>Alan Płócieniak, Perry Nguyen, Lukas Schulze</authors>
     <owners>kendaleiv</owners>
@@ -14,7 +14,7 @@
     <iconUrl>https://cdn.jsdelivr.net/gh/alan-null/keepasshttp@master/logo.png</iconUrl>
     <tags>keepass keepasshttp admin</tags>
     <copyright>© pfn</copyright>
-    <licenseUrl>https://github.com/alan-null/keepasshttp/blob/v2.3.0.0/LICENSE</licenseUrl>
+    <licenseUrl>https://github.com/alan-null/keepasshttp/blob/v2.3.1.0/LICENSE</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <docsUrl>https://alan-null.github.io/keepasshttp/</docsUrl>
     <bugTrackerUrl>https://github.com/alan-null/keepasshttp/issues</bugTrackerUrl>
